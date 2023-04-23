@@ -13,6 +13,23 @@ namespace ParksApi.Controllers
     {
       _db = db;
     }
-    
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Park>>> Get()
+    {
+      return await _db.Parks.ToListAsync();
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Park>> GetPark(int id)
+    {
+      Park park = await _db.Parks.FindAsync(id);
+      if (park == null)
+      {
+        return NotFound();
+      }
+
+      return park;
+    }
   }
 }

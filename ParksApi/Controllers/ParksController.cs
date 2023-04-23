@@ -16,9 +16,15 @@ namespace ParksApi.Controllers
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Park>>> Get()
+    public async Task<ActionResult<IEnumerable<Park>>> Get([FromQuery] PaginationFilter filter)
     {
-      return await _db.Parks.ToListAsync();
+      var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize);
+      var pagedData = await _db.Parks
+                               .Skip((validFilter.PageNumber - 1) * validFilter.PageSize)
+                               .Take(validFilter.PageSize)
+                               .ToListAsync();
+      var totalRecords = await _db.Parks.CountAsync();
+      return Ok(new PagedResponse<List<Park>>(pagedData, validFilter.PageNumber, validFilter.PageSize));
     }
 
     [HttpGet("{id}")]

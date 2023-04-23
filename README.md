@@ -105,12 +105,16 @@ $ dotnet watch run
 This will redirect to https://localhost:5001/swagger/index.html, and the UI at this URL lists the endpoints and the Park schema. The UI also provides an interface that can be used to test the API endpoints and view response codes. Before using the UI to test out the endpoints, please read the notes about request bodies in the previous section of this README.
 
 ## Additional Functionality
-This project was also used to practice implementing pagination: you can find more information in [this tutorial][Pagination]
+This project was also used to practice implementing pagination: you can find more information in [this tutorial][Pagination]. Pagination is used for the GET request that returns a list of all Parks. The classes contained in the Wrappers directory, within the ParksApi directory, are used to construct parameters for pagination and to implement the pagination filter within the Parks Controller.
 
+* The Response class wraps the data from the API response in an additional object layer that provides additional data about the response itself, including information about success status, errors, and error messages. This class is used in the controller action that returns a specific park by its id.
 
+* The PagedResponse class exends the Response base class. The Paged Response class is used to create properties for implementing pagination: properties like PageNumber and PageSize.
+
+* The PaginationFilter class implements the properties from the PageedReponse class in our Controller. This is used in the controller action that returns all possible parks from the API. Using this PaginationFilter in the Get action means that this request now requires two parameters: PageNumber and PageSize. PageSize limits the returned page to the entered number of Parks objects. PageNumber returns the entered page number of responses. This request will also return the data from our base class Response that wraps the response data.
 
 ## Known Bugs
-* No known bugs
+* The basic pagination functionality seems to work as expected, but there are additional steps in the tutorial that I'm interested in trying: Pagination URLs and a Pagination Helper class. I also plan on creating a ParksClient to consume the data from the API.
 
 ## License
 

@@ -1,7 +1,7 @@
 namespace ParksApi.Wrappers
 {
   public class Response<T>
-{
+  {
     public Response()
     {
     }
@@ -16,5 +16,5 @@ namespace ParksApi.Wrappers
     public bool Succeeded { get; set; }
     public string[] Errors { get; set; }
     public string Message { get; set; }
-}
+  }
 }

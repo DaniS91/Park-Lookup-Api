@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ParksApi.Models;
+using ParksApi.Wrappers;
 
 namespace ParksApi.Controllers
 {
@@ -29,7 +30,7 @@ namespace ParksApi.Controllers
         return NotFound();
       }
 
-      return park;
+      return Ok(new Response<Park>(park));
     }
 
     [HttpPost]

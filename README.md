@@ -12,7 +12,7 @@
 * _Swagger UI_
 
 ## Description
-This application is a self-contained project developed as part of [Epicodus][Epicodus] coursework in [C# with .Net][C# course main]. It was completed following the ["Building an API"][C# chapter] module in the curriculum. This project demonstrates proficiency in creating an ASP.NET Core Web API with full CRUD functionality, using RESTFUL principles. It uses Swagger UI for documenting API endpoints.
+This application is a self-contained project developed as part of [Epicodus][Epicodus] coursework in [C# with .Net][C# course main]. It was completed following the ["Building an API"][C# chapter] module in the curriculum. This project demonstrates proficiency in creating an ASP.NET Core Web API with full CRUD functionality, using RESTFUL principles. It uses Swagger UI for documenting API endpoints. It also implements response wrapping and pagination.
 
 ## Setup/Installation Requirements
 #### Setting up directories

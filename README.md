@@ -104,6 +104,11 @@ $ dotnet watch run
 ```
 This will redirect to https://localhost:5001/swagger/index.html, and the UI at this URL lists the endpoints and the Park schema. The UI also provides an interface that can be used to test the API endpoints and view response codes. Before using the UI to test out the endpoints, please read the notes about request bodies in the previous section of this README.
 
+## Additional Functionality
+This project was also used to practice implementing pagination: you can find more information in [this tutorial][Pagination]
+
+
+
 ## Known Bugs
 * No known bugs
 
@@ -117,5 +122,5 @@ Copyright (c) _4/22/23_ _Dani Steely_
 [C# course main]: https://www.learnhowtoprogram.com/c-and-net-part-time
 [C# chapter]: https://www.learnhowtoprogram.com/c-and-net-part-time/building-an-api
 [Code-First Dev]: https://www.learnhowtoprogram.com/c-and-net-part-time/many-to-many-relationships/code-first-development-and-migrations
-
+[Pagination]: https://codewithmukesh.com/blog/pagination-in-aspnet-core-webapi/
 
